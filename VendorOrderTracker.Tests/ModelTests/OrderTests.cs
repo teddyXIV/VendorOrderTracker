@@ -69,6 +69,14 @@ namespace VendorOrderTracker.TestTools
             int expected = 80;
             Assert.AreEqual(expected, newOrder.Price);
         }
+
+        [TestMethod]
+        public void GetDate_ReturnOrderDate_String()
+        {
+            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            string expected = "1/26/2024";
+            Assert.AreEqual(expected, newOrder.Date);
+        }
     }
 }
 

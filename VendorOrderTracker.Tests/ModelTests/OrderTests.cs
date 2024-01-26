@@ -102,5 +102,3 @@ namespace VendorOrderTracker.TestTools
         }
     }
 }
-
-//title, description, price, date, id 

@@ -84,6 +84,14 @@ namespace VendorOrderTracker.TestTools
             int expected = 1;
             Assert.AreEqual(expected, newOrder.Id);
         }
+        [TestMethod]
+        public void FindOrder_ReturnOrderById_Order()
+        {
+            Order order1 = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            Order order2 = new("Sourdough for Panera", "10 loaves", 150);
+            Order expected = order2;
+            Assert.AreEqual(expected, Order.FindOrder(2));
+        }
     }
 }
 

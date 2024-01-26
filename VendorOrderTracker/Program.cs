@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Project
+namespace VendorOrderTracker
 {
     class Program
     {
@@ -14,6 +14,8 @@ namespace Project
             WebApplication app = builder.Build();
 
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.MapControllerRoute(
               name: "default",

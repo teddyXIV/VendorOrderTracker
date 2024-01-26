@@ -69,6 +69,16 @@ namespace VendorOrderTracker.Test
             Vendor vendor2 = new("Whidbey Coffee", "Regional coffee chain");
             Assert.AreEqual(vendor2, Vendor.FindVendor(2));
         }
+
+        [TestMethod]
+        public void AddOrder_AddOrderToOrders_Void()
+        {
+            Vendor newVendor = new("Suzie's Cafe", "Local coffee shop");
+            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            newVendor.AddOrder(newOrder);
+            List<Order> expected = new() { newOrder };
+            CollectionAssert.AreEqual(expected, newVendor.Orders);
+        }
     }
 
 }

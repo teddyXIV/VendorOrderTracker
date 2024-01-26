@@ -52,6 +52,23 @@ namespace VendorOrderTracker.Test
             string expected = "Serves coffee and pastries";
             Assert.AreEqual(expected, newVendor.Description);
         }
+
+        [TestMethod]
+        public void GetAll_ReturnAllInstancesOfVendors_List()
+        {
+            Vendor vendor1 = new("Suzie's Cafe", "Local coffee shop");
+            Vendor vendor2 = new("Whidbey Coffee", "Regional coffee chain");
+            List<Vendor> expected = new() { vendor1, vendor2 };
+            CollectionAssert.AreEqual(expected, Vendor.GetAll());
+        }
+
+        [TestMethod]
+        public void FindVendor_ReturnVendorById_Vendor()
+        {
+            Vendor vendor1 = new("Suzie's Cafe", "Local coffee shop");
+            Vendor vendor2 = new("Whidbey Coffee", "Regional coffee chain");
+            Assert.AreEqual(vendor2, Vendor.FindVendor(2));
+        }
     }
 
 }

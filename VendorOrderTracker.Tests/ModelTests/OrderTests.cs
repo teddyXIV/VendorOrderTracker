@@ -60,6 +60,15 @@ namespace VendorOrderTracker.TestTools
             int expected = 100;
             Assert.AreEqual(expected, newOrder.Price);
         }
+
+        [TestMethod]
+        public void SetPrice_SetsOrderPrice_Void()
+        {
+            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            newOrder.Price = 80;
+            int expected = 80;
+            Assert.AreEqual(expected, newOrder.Price);
+        }
     }
 }
 

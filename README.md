@@ -1,6 +1,6 @@
-# C# Web App Template
+# Vendor Order Tracker
 
-####  A Ca template for building C# web applications.
+####  An MVC application for tracking the order of various vendore from a fictional bakery.
 
 #### By Teddy Peterschmidt
 

@@ -52,5 +52,15 @@ namespace VendorOrderTracker.TestTools
             string expected = "60 croissants";
             Assert.AreEqual(expected, newOrder.Description);
         }
+
+        [TestMethod]
+        public void GetPrice_ReturnOrderPrice_Int()
+        {
+            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            int expected = 100;
+            Assert.AreEqual(expected, newOrder.Price);
+        }
     }
 }
+
+//title, description, price, date, id 

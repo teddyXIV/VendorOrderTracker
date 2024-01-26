@@ -1,0 +1,20 @@
+@{
+    Layout = "_Layout";
+}
+
+@using VendorOrderTracker.Models;
+
+<ol>
+    @foreach (Order order in @Model["orders"])
+    {
+        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'></a>@order.Title</li>
+    }
+</ol>
+
+<form action='/vendors/@Model["vendor"].Id/orders/new' method="get">
+    <button type="submit">Add an order!</button>
+</form>
+
+<form action='/vendors/' method="get">
+    <button type="submit">Back to vendor list</button>
+</form>

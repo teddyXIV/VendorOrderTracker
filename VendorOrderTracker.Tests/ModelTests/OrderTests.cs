@@ -92,6 +92,14 @@ namespace VendorOrderTracker.TestTools
             Order expected = order2;
             Assert.AreEqual(expected, Order.FindOrder(2));
         }
+        [TestMethod]
+        public void GetAll_ReturnOrderAllOrders_List()
+        {
+            Order order1 = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            Order order2 = new("Sourdough for Panera", "10 loaves", 150);
+            List<Order> expected = new() { order1, order2 };
+            CollectionAssert.AreEqual(expected, Order.GetAll());
+        }
     }
 }
 

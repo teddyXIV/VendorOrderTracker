@@ -43,6 +43,15 @@ namespace VendorOrderTracker.Test
             string expected = "Local coffee shop";
             Assert.AreEqual(expected, newVendor.Description);
         }
+
+        [TestMethod]
+        public void SetDescription_SetVendorDescription_Void()
+        {
+            Vendor newVendor = new("Suzie's Cafe", "Local coffee shop");
+            newVendor.Description = "Serves coffee and pastries";
+            string expected = "Serves coffee and pastries";
+            Assert.AreEqual(expected, newVendor.Description);
+        }
     }
 
 }

@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+@using VendorOrderTracker.Models;
+
+@foreach (Vendor vendor in Model)
+{
+    <h3><a href="/">@vendor.Name</a></h3>
+}
+
+
+<form action="/vendors/new" method="get">
+    <button type="submit">Add a vendor</button>
+</form>

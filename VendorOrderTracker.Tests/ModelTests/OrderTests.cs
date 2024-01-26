@@ -26,5 +26,15 @@ namespace VendorOrderTracker.TestTools
             string expected = "Croissants for Suzie's Cafe";
             Assert.AreEqual(expected, newOrder.Title);
         }
+
+        [TestMethod]
+        public void SetTitle_SetsOrderTitle_Void()
+        {
+            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
+            newOrder.Title = "Suzie's order";
+            string expected = "Suzie's order";
+            Assert.AreEqual(expected, newOrder.Title);
+        }
+
     }
 }

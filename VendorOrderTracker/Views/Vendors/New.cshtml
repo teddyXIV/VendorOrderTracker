@@ -3,9 +3,13 @@
 }
 
 <form action="/vendors" method="post">
-    <label for="vendorName">New vendor name: </label>
-    <input id="vendorName" name="vendorName" type="text">
-    <label for="vendorDescription">New vendor description: </label>
-    <input id="vendorDescription" name="vendorDescription" type="text">
+    <div class="mb-3">
+        <label class="form-label" for="vendorName">New vendor name: </label>
+        <input class="form-control" id="vendorName" name="vendorName" type="text">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="vendorDescription">New vendor description: </label>
+        <input class="form-control" id="vendorDescription" name="vendorDescription" type="text">
+    </div>
     <button type="submit">Add vendor</button>
 </form>

@@ -2,7 +2,7 @@
     Layout = "_Layout";
 }
 
-<form action="/vendors" method="post">
+<form class="newForm" action="/vendors" method="post">
     <div class="mb-3">
         <label class="form-label" for="vendorName">New vendor name: </label>
         <input class="form-control" id="vendorName" name="vendorName" type="text">
@@ -12,4 +12,8 @@
         <input class="form-control" id="vendorDescription" name="vendorDescription" type="text">
     </div>
     <button type="submit">Add vendor</button>
+</form>
+
+<form action="/vendors/" method="get">
+    <button type="submit">Back</button>
 </form>

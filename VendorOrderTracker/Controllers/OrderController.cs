@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using VendorOrderTracker.Models;
 
@@ -12,6 +13,18 @@ namespace VendorOrderTracker.Controllers
             Vendor vendor = Vendor.FindVendor(vendorId);
             return View(vendor);
         }
+
+        [HttpGet("/vendors/{vendorID}/orders/{orderId}")]
+        public ActionResult Show(int vendorId, int orderId)
+        {
+            Order order = Order.FindOrder(orderId);
+            Vendor vendor = Vendor.FindVendor(vendorId);
+            Dictionary<string, object> model = new();
+            model.Add("vendor", vendor);
+            model.Add("order", order);
+            return View(model);
+        }
+
 
     }
 }

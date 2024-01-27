@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+.header {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Alex Brush', cursive;
+    font-size: xx-large;
+
+}
+
+.logo-container {
+    width: 25%;
+}
+
+.header-title {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header-filler {
+    width: 25%;
+}
+
+img {
+    width: 200px;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+body {
+    text-align: center;
+}

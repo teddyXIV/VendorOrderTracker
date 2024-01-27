@@ -5,3 +5,11 @@
 <h2>@Model["order"].Title, $@Model["order"].Price</h2>
 <h3>@Model["order"].Description</h3>
 <h4>@Model["order"].Date</h4>
+
+<form action='/vendors/@Model["vendor"].Id/' method="get">
+    <button>Back to all orders for @Model["vendor"].Name</button>
+</form>
+
+<form action='/vendors' method="get">
+    <button>Back to all vendors</button>
+</form>

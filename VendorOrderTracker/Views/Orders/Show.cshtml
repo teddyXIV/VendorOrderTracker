@@ -10,6 +10,12 @@
     <button>Back to all orders for @Model["vendor"].Name</button>
 </form>
 
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+    <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>
+    <button>Delete order</button>
+</form>
+
 <form action='/vendors' method="get">
     <button>Back to all vendors</button>
 </form>

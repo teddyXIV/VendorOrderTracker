@@ -74,7 +74,7 @@ namespace VendorOrderTracker.TestTools
         public void GetDate_ReturnOrderDate_String()
         {
             Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
-            string expected = "1/26/2024";
+            string expected = DateTime.Today.ToString("d");
             Assert.AreEqual(expected, newOrder.Date);
         }
         [TestMethod]

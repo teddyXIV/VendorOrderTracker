@@ -59,5 +59,11 @@ namespace VendorOrderTracker.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // [HttpPost("/vendors/{id}")]
+        // public ActionResult Update(int vendorId)
+        // {
+
+        // }
     }
 }

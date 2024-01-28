@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace VendorOrderTracker.Models
 {
@@ -32,7 +33,9 @@ namespace VendorOrderTracker.Models
 
         public static Vendor FindVendor(int searchId)
         {
-            return _instances[searchId - 1];
+
+            Vendor target = _instances.FirstOrDefault(vendor => vendor.Id == searchId);
+            return target;
         }
 
         public void AddOrder(Order order)

@@ -13,6 +13,11 @@
 
 <form action='/vendors/@Model["vendor"].Id/orders/new' method="get">
     <button type="submit">Add an order!</button>
+
+</form>
+<form action="/vendors/{id}" method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+    <button type="submit">Delete vendor</button>
 </form>
 
 <form action='/vendors/' method="get">

@@ -52,6 +52,7 @@ button {
     width: 50%;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -59,10 +60,11 @@ button {
 
 .searchForm {
     font-family: 'Alice', serif;
+    display: flex;
 }
 
 .searchForm button {
-    margin: 0;
+    margin: 5px;
 }
 
 a {

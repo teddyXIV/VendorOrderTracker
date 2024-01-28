@@ -29,11 +29,13 @@ namespace VendorOrderTracker.Controllers
         [HttpGet("/vendors/{id}")]
         public ActionResult Show(int id)
         {
-            Dictionary<string, object> model = new();
             Vendor selectedVendor = Vendor.FindVendor(id);
             List<Order> vendorOrders = selectedVendor.Orders;
-            model.Add("vendor", selectedVendor);
-            model.Add("orders", vendorOrders);
+            Dictionary<string, object> model = new()
+            {
+                { "vendor", selectedVendor },
+                { "orders", vendorOrders }
+            };
             return View(model);
         }
 

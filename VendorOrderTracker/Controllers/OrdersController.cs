@@ -19,9 +19,11 @@ namespace VendorOrderTracker.Controllers
         {
             Order order = Order.FindOrder(orderId);
             Vendor vendor = Vendor.FindVendor(vendorId);
-            Dictionary<string, object> model = new();
-            model.Add("vendor", vendor);
-            model.Add("order", order);
+            Dictionary<string, object> model = new()
+            {
+                { "vendor", vendor },
+                { "order", order }
+            };
             return View(model);
         }
 
@@ -32,7 +34,9 @@ namespace VendorOrderTracker.Controllers
             Order selectedOrder = Order.FindOrder(orderId);
             selectedVendor.Orders.Remove(selectedOrder);
             Order.GetAll().Remove(selectedOrder);
-            return RedirectToAction("Show", new { vendorId = vendorId, orderId = orderId });
+            return RedirectToAction("Show", "Vendors", new { id = vendorId });
         }
     }
 }
+
+// return RedirectToAction("Show", "VendorsController", new { id = vendorId });

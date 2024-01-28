@@ -18,7 +18,7 @@ namespace VendorOrderTracker.Controllers
             }
             else
             {
-                IEnumerable<Vendor> searchResults = allVendors.Where(vendor => vendor.Name.ToLower() == searchString.ToLower());
+                List<Vendor> searchResults = allVendors.Where(vendor => vendor.Name.ToLower() == searchString.ToLower()).ToList();
                 return View(searchResults);
             }
         }

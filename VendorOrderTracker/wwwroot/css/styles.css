@@ -48,6 +48,10 @@ button {
     margin: 20px;
 }
 
+button:hover {
+    transform: scale(1.04);
+}
+
 .newForm {
     width: 50%;
     margin: auto;

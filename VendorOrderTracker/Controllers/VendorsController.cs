@@ -18,7 +18,7 @@ namespace VendorOrderTracker.Controllers
             }
             else
             {
-                IEnumerable<Vendor> searchResults = allVendors.Where(vendor => vendor.Name == searchString);
+                IEnumerable<Vendor> searchResults = allVendors.Where(vendor => vendor.Name.ToLower() == searchString.ToLower());
                 return View(searchResults);
             }
         }
@@ -72,10 +72,5 @@ namespace VendorOrderTracker.Controllers
             return RedirectToAction("Index");
         }
 
-        // [HttpPost("/vendors/{id}")]
-        // public ActionResult Update(int vendorId)
-        // {
-
-        // }
     }
 }

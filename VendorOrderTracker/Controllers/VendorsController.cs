@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
@@ -7,10 +9,18 @@ namespace VendorOrderTracker.Controllers
     public class VendorsController : Controller
     {
         [HttpGet("/vendors")]
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             List<Vendor> allVendors = Vendor.GetAll();
-            return View(allVendors);
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return View(allVendors);
+            }
+            else
+            {
+                IEnumerable<Vendor> searchResults = allVendors.Where(vendor => vendor.Name == searchString);
+                return View(searchResults);
+            }
         }
 
         [HttpGet("/vendors/new")]

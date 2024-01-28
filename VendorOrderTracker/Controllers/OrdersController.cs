@@ -38,5 +38,3 @@ namespace VendorOrderTracker.Controllers
         }
     }
 }
-
-// return RedirectToAction("Show", "VendorsController", new { id = vendorId });

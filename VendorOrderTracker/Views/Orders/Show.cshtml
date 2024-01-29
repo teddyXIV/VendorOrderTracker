@@ -10,6 +10,12 @@
     <button>Back to all orders for @Model["vendor"].Name</button>
 </form>
 
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/edit' method="get">
+    <input id="editId" name="editId" type="hidden" value='@Model["order"].Id'>
+    <input id="vendorEditId" name="vendorEditId" type="hidden" value='@Model["vendor"].Id'>
+    <button type="submit">Edit order</button>
+</form>
+
 <form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
     <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
     <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>

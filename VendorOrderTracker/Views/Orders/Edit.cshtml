@@ -1,0 +1,25 @@
+@{
+    Layout = "_Layout";
+}
+
+<form class="newForm" action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/update' method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+    <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>
+    <div class="mb-3">
+        <label class="form-label" for="newOrderTitle">Edit order name: </label>
+        <input class="form-control" id="newOrderTitle" name="newOrderTitle" type="text" value='@Model["order"].Title' required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="newOrderDescription">Edit order description: </label>
+        <input class="form-control" id="newOrderDescription" name="newOrderDescription" type="text" value='@Model["order"].Description' required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="newOrderPrice">Edit order price: </label>
+        <input class="form-control" id="newOrderPrice" name="newOrderPrice" type="number" value='@Model["order"].Price' required>
+    </div>
+    <button type="submit">Update order</button>
+</form>
+
+<form action="/vendors/" method="get">
+    <button type="submit">Back</button>
+</form>

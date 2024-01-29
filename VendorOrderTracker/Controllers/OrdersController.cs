@@ -36,5 +36,28 @@ namespace VendorOrderTracker.Controllers
             Order.GetAll().Remove(selectedOrder);
             return RedirectToAction("Show", "Vendors", new { id = vendorId });
         }
+
+        [HttpGet("vendors/{id}/orders/{orderId}/edit")]
+        public ActionResult Edit(int vendorEditId, int editId)
+        {
+            Order order = Order.FindOrder(editId);
+            Vendor vendor = Vendor.FindVendor(vendorEditId);
+            Dictionary<string, object> model = new()
+            {
+                { "vendor", vendor },
+                { "order", order }
+            };
+            return View(model);
+        }
+
+        [HttpPost("/vendors/{vendorId}/orders/{orderId}/update")]
+        public ActionResult Update(int orderId, int vendorId, string newOrderTitle, string newOrderDescription, string newOrderPrice)
+        {
+            Order selectedOrder = Order.FindOrder(orderId);
+            selectedOrder.Title = newOrderTitle;
+            selectedOrder.Description = newOrderDescription;
+            selectedOrder.Price = int.Parse(newOrderPrice);
+            return RedirectToAction("Show", new { vendorId, orderId });
+        }
     }
 }

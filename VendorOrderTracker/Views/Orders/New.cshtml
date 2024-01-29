@@ -6,15 +6,15 @@
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
     <div class="mb-3">
         <label class="form-label" for="orderTitle">New order name: </label>
-        <input class="form-control" id="orderTitle" name="orderTitle" type="text">
+        <input class="form-control" id="orderTitle" name="orderTitle" type="text" required>
     </div>
     <div class="mb-3">
         <label class="form-label" for="orderDescription">New order description: </label>
-        <input class="form-control" id="orderrDescription" name="orderDescription" type="text">
+        <input class="form-control" id="orderrDescription" name="orderDescription" type="text" required>
     </div>
     <div class="mb-3">
         <label class="form-label" for="orderPrice">New order price: </label>
-        <input class="form-control" id="orderPrice" name="orderPrice" type="number">
+        <input class="form-control" id="orderPrice" name="orderPrice" type="number" required>
     </div>
     <button type="submit">Add order</button>
 </form>

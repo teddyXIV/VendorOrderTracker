@@ -6,11 +6,11 @@
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
     <div class="mb-3">
         <label class="form-label" for="newVendorName">Edit vendor name: </label>
-        <input class="form-control" id="newVendorName" name="newVendorName" type="text">
+        <input class="form-control" id="newVendorName" name="newVendorName" type="text" value="@Model.Name" required>
     </div>
     <div class="mb-3">
         <label class="form-label" for="newVendorDescription">Edit vendor description: </label>
-        <input class="form-control" id="newVendorDescription" name="newVendorDescription" type="text">
+        <input class="form-control" id="newVendorDescription" name="newVendorDescription" type="text" value="@Model.Description" required>
     </div>
     <button type="submit">Update vendor</button>
 </form>

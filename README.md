@@ -12,10 +12,14 @@
 
 ## Description
 
-Description of the project goes here: 
-* This list 
-* Covers the different
-* actions users can take
+This application allows the user to track vendor orders through the following functionality: 
+* Adding to a list of vendors 
+* Editing vendor information
+* Deleting vendors
+* Recording orders placed by vendors
+* Editing vendor orders
+* Deleting vendor orders
+* Searching for specific vendors
 
 ## Setup/Installation Requirements
 
@@ -30,7 +34,7 @@ Description of the project goes here:
 
 ## Known Bugs
 
-* List known bugs here.
+* Unknown at this time.
 
 ## License
 

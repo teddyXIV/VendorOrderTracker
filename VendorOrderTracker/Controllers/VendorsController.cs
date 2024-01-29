@@ -18,7 +18,7 @@ namespace VendorOrderTracker.Controllers
             }
             else
             {
-                List<Vendor> searchResults = allVendors.Where(vendor => vendor.Name.ToLower() == searchString.ToLower()).ToList();
+                List<Vendor> searchResults = allVendors.Where(vendor => vendor.Name.ToLower().Contains(searchString.ToLower())).ToList();
                 return View(searchResults);
             }
         }
@@ -62,7 +62,7 @@ namespace VendorOrderTracker.Controllers
             return View("Show", model);
         }
 
-        [HttpPost("/vendors/{id}")]
+        [HttpPost("/vendors/{id}/destroy")]
         public ActionResult Destroy(int vendorId)
         {
             Vendor selectedVendor = Vendor.FindVendor(vendorId);
@@ -70,6 +70,22 @@ namespace VendorOrderTracker.Controllers
             allVendors.Remove(selectedVendor);
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet("vendors/{id}/edit")]
+        public ActionResult Edit(int editId)
+        {
+            Vendor selectedVendor = Vendor.FindVendor(editId);
+            return View(selectedVendor);
+        }
+
+        [HttpPost("/vendors/{id}/update")]
+        public ActionResult Update(int vendorId, string newVendorName, string newVendorDescription)
+        {
+            Vendor selectedVendor = Vendor.FindVendor(vendorId);
+            selectedVendor.Name = newVendorName;
+            selectedVendor.Description = newVendorDescription;
+            return RedirectToAction("Show", new { selectedVendor.Id });
         }
 
     }

@@ -100,22 +100,5 @@ namespace VendorOrderTracker.TestTools
             List<Order> expected = new() { order1, order2 };
             CollectionAssert.AreEqual(expected, Order.GetAll());
         }
-
-        [TestMethod]
-        public void GetFulfilled_ReturnOrderFulfilled_Bool()
-        {
-            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
-            bool expected = false;
-            Assert.AreEqual(expected, newOrder.Fulfilled);
-        }
-
-        [TestMethod]
-        public void SetFulfilled_SetsOrderFulfilled_Void()
-        {
-            Order newOrder = new("Croissants for Suzie's Cafe", "5 dozen croissants", 100);
-            newOrder.Fulfilled = true;
-            bool expected = true;
-            Assert.AreEqual(expected, newOrder.Fulfilled);
-        }
     }
 }

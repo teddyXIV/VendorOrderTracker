@@ -20,14 +20,16 @@
 
     </form>
 </div>
-<form action='/vendors/@Model["vendor"].Id/edit' method="get">
-    <input id="editId" name="editId" type="hidden" value='@Model["vendor"].Id'>
-    <button type="submit">Edit vendor</button>
-</form>
-<form action="/vendors/{id}/destroy" method="post">
-    <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
-    <button type="submit">Delete vendor</button>
-</form>
+<div class="button-container">
+    <form action='/vendors/@Model["vendor"].Id/edit' method="get">
+        <input id="editId" name="editId" type="hidden" value='@Model["vendor"].Id'>
+        <button type="submit">Edit vendor</button>
+    </form>
+    <form action="/vendors/{id}/destroy" method="post">
+        <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+        <button type="submit">Delete vendor</button>
+    </form>
+</div>
 
 <form action='/vendors/' method="get">
     <button type="submit">Back to vendor list</button>
